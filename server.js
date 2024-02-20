@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const db = require("./db");
+require("dotenv").config();
+
 const bodyParser = require("body-parser");
-const Menu = require("./Models/menu");
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
